@@ -1,9 +1,9 @@
-import './App.css';
+import './index.css';
 
 function App() {
   return (
-    <div>
-      <p>HELLO IN REACT</p>
+    <div className="bg">
+      12
     </div>
   );
 }
