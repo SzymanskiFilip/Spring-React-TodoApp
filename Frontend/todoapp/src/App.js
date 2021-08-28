@@ -1,9 +1,12 @@
+import React from 'react';
 import './index.css';
+import './TodoForm.js';
+import TodoForm from './TodoForm.js';
 
 function App() {
   return (
-    <div className="bg">
-      12
+    <div>
+      <TodoForm />
     </div>
   );
 }
