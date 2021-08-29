@@ -8,6 +8,10 @@ function Todo(props) {
     setConfirmationIsOpen(true);
   }
 
+  function closeHandler() {
+    setConfirmationIsOpen(false);
+  }
+
   return (
     <div className="card">
       <h1>{props.title}</h1>
@@ -15,7 +19,7 @@ function Todo(props) {
       <div className="flex">
         <button onClick={deleteHandler}>delete</button>
       </div>
-      {confirmationIsOpen && <Confirmation />}
+      {confirmationIsOpen && <Confirmation onCancel={closeHandler} />}
     </div>
   );
 }
