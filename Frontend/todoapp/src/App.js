@@ -1,5 +1,6 @@
 import "./index.css";
 import Todo from "./components/Todo.js";
+import Confirmation from "./components/Confirmation.js";
 function App() {
   return (
     <div>
@@ -7,6 +8,7 @@ function App() {
       <div className="container">
         <Todo title="Wash the car" creator="Filip" />
         <Todo title="Eat ice cream" creator="Filip" />
+        <Confirmation />
       </div>
     </div>
   );
