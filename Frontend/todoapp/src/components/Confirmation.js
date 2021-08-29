@@ -10,7 +10,9 @@ function Confirmation(props) {
         <button className="btn" onClick={props.onCancel}>
           Cancel
         </button>
-        <button className="btn">Confirm</button>
+        <button className="btn" onClick={props.onConfirm}>
+          Confirm
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Confirmation from "./Confirmation.js";
+import ConfirmationBG from "./ConfirmationBG.js";
 
 function Todo(props) {
   const [confirmationIsOpen, setConfirmationIsOpen] = useState(false);
@@ -19,7 +20,10 @@ function Todo(props) {
       <div className="flex">
         <button onClick={deleteHandler}>delete</button>
       </div>
-      {confirmationIsOpen && <Confirmation onCancel={closeHandler} />}
+      {confirmationIsOpen && (
+        <Confirmation onCancel={closeHandler} onConfirm={closeHandler} />
+      )}
+      {confirmationIsOpen && <ConfirmationBG onCancel={closeHandler} />}
     </div>
   );
 }
