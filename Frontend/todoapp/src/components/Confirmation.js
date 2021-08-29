@@ -1,9 +1,15 @@
-function Confirmation() {
+function Confirmation(props) {
+  function cancelHandler() {}
+
+  function confirmHandler() {}
+
   return (
     <div className="confirmation">
       <div className="modal">
         <p>Are you sure?</p>
-        <button className="btn">Cancel</button>
+        <button className="btn" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button className="btn">Confirm</button>
       </div>
     </div>
