@@ -2,6 +2,14 @@ import "./index.css";
 import Todo from "./components/Todo.js";
 
 function App() {
+  fetch("http://localhost:8080/todos")
+    .then((response) => response.json())
+    .then((data) => {
+      for (let x in data) {
+        console.log(x);
+      }
+    });
+
   return (
     <div>
       <h1 className="title">Todos</h1>

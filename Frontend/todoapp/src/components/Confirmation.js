@@ -1,8 +1,4 @@
 function Confirmation(props) {
-  function cancelHandler() {}
-
-  function confirmHandler() {}
-
   return (
     <div className="confirmation">
       <div className="modal">
