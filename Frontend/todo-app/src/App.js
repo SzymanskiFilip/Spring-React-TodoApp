@@ -1,6 +1,10 @@
+import TodoList from "./Components/TodoList";
+
 function App() {
   return (
-    <div>1</div>
+    <div>
+      <TodoList/>
+    </div>
   );
 }
 
