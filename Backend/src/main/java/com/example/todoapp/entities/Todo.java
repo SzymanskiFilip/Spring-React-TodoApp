@@ -8,7 +8,6 @@ import java.util.Objects;
 public class Todo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
     String title;
-    String description;
     boolean status;
 
     public Todo() {}
@@ -29,14 +28,6 @@ public class Todo {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public boolean isStatus() {
         return status;
     }
@@ -50,7 +41,6 @@ public class Todo {
         return "Todo{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
                 ", status=" + status +
                 '}';
     }
@@ -60,11 +50,11 @@ public class Todo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Todo todo = (Todo) o;
-        return status == todo.status && id.equals(todo.id) && title.equals(todo.title) && description.equals(todo.description);
+        return status == todo.status && id.equals(todo.id) && Objects.equals(title, todo.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, status);
+        return Objects.hash(id, title, status);
     }
 }
