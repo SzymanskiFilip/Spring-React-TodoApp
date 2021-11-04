@@ -20,11 +20,17 @@ body{
 .todo{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: white;
     width: 400px;
     height: 75px;
     margin: 10px;
+}
+
+.todo-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .todo input{
@@ -35,6 +41,14 @@ body{
 
 .done{
     text-decoration: line-through;
+}
+
+.delete-btn{
+    margin: 15px;
+}
+
+.delete-btn:hover{
+    cursor: pointer;
 }
 
 
