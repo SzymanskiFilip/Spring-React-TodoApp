@@ -20,7 +20,7 @@ function TodoList(){
       <div className="todo-list">
           {
               todos.map((todo) => (
-                <TodoComponent title={todo.title} status={todo.status} key={todo.id}/>
+                <TodoComponent title={todo.title} status={todo.status} key={todo.id} id={todo.id}/>
               ))
           }
       </div>
