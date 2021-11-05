@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import TodoComponent from "./TodoComponent";
 import ConfirmDeleting from "./ConfirmDeleting";
+import PromptBackground from "./PromptBackground";
 
 function TodoList(){
 
@@ -20,6 +21,7 @@ function TodoList(){
 
     return(
       <div className="todo-list">
+          <PromptBackground/>
           <ConfirmDeleting/>
           {
               todos.map((todo) => (
