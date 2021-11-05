@@ -12,7 +12,6 @@ function TodoList(){
         setTodos(json);
     }
 
-    //TODO: In confirmDeleting on delete rerender the list of todos, pass the getTodos function as prop and execute it
 
     useEffect(() => {
         getTodos();
