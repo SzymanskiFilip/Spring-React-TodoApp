@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import TodoComponent from "./TodoComponent";
+import ConfirmDeleting from "./ConfirmDeleting";
 
 function TodoList(){
 
@@ -19,6 +20,7 @@ function TodoList(){
 
     return(
       <div className="todo-list">
+          <ConfirmDeleting/>
           {
               todos.map((todo) => (
                 <TodoComponent title={todo.title} status={todo.status} key={todo.id} id={todo.id}/>
