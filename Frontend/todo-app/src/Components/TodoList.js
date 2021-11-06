@@ -37,16 +37,16 @@ function TodoList(){
         disablePrompt();
         console.log(deletionId);
         console.log(deletionTitle);
-        console.log("DELETING... PLEASE WAIT...");
+        console.log("DELETING id="  + `${deletionId}` + "... PLEASE WAIT...");
     }
 
     function disablePrompt(){
         setPromptStatus(false);
     }
 
-    async function updateChecked(status){
+    async function updateChecked(status, id){
         //true = unchecked false = checked
-        console.log(`Updating.... current status = ${status}`);
+        console.log(`Updating.... current status = ${status} with the id=${id}`);
     }
 
     return(
