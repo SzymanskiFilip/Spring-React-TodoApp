@@ -44,9 +44,15 @@ function TodoList(){
         setPromptStatus(false);
     }
 
-    async function updateChecked(status, id){
-        //true = unchecked false = checked
-        console.log(`Updating.... current status = ${status} with the id=${id}`);
+    //TODO: Fix object to update
+    async function updateChecked(id, status, title){
+        const requestStatus = !status;
+        const todo = {
+            "id": id,
+            "status": requestStatus,
+            "title": title
+        };
+        console.log(JSON.stringify(todo));
     }
 
     return(
