@@ -1,6 +1,6 @@
-function PromptBackground(){
+function PromptBackground(props){
     return (
-        <div className="prompt-bg">
+        <div className="prompt-bg" onClick={props.disableFunc}>
 
         </div>
     )
