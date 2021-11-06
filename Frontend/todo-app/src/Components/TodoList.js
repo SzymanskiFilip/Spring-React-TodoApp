@@ -29,10 +29,14 @@ function TodoList(){
         }
     }
 
+    function disablePrompt(){
+        setPromptStatus(false);
+    }
+
     return(
       <div className="todo-list">
           {
-              promptStatus ? <PromptBackground/> : <></>
+              promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
           }
           {
               promptStatus ? <ConfirmDeleting/> : <></>
