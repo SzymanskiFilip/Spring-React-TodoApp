@@ -2,9 +2,7 @@ package com.example.todoapp.controllers;
 
 import com.example.todoapp.entities.Todo;
 import com.example.todoapp.repositories.TodoRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +19,10 @@ public class TodoController {
     List<Todo> allTodos(){
         return repository.findAll();
     }
+
+    @PutMapping("/todo")
+    Todo updateTodo(@RequestBody Todo todo){
+        return repository.save(todo);
+    }
+
 }
