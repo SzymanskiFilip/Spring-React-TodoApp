@@ -22,7 +22,7 @@ function TodoList(){
         setTodos(json);
     }
 
-    async function deleteTodo(id, title){
+    function deleteTodo(id, title){
         setDeletionId(id);
         if(promptStatus == false){
             setPromptStatus(true);
@@ -31,6 +31,13 @@ function TodoList(){
         }
         setDeletionId(id);
         setDeletionTitle(title);
+    }
+
+    async function executeDeletion(){
+        disablePrompt();
+        console.log(deletionId);
+        console.log(deletionTitle);
+        console.log("DELETING... PLEASE WAIT...");
     }
 
     function disablePrompt(){
@@ -43,7 +50,7 @@ function TodoList(){
               promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
           }
           {
-              promptStatus ? <ConfirmDeleting title={deletionTitle} cancelFunc={disablePrompt}/> : <></>
+              promptStatus ? <ConfirmDeleting title={deletionTitle} cancelFunc={disablePrompt} delete={executeDeletion}/> : <></>
           }
 
           {
