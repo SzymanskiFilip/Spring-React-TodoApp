@@ -6,6 +6,12 @@ import PromptBackground from "./PromptBackground";
 function TodoList(){
 
     const [todos, setTodos] = useState([]);
+    const [promptStatus, setPromptStatus] = useState(false);
+
+    useEffect(() => {
+        getTodos();
+    },[]);
+
 
     async function getTodos(){
         const res = await fetch("api/v1/todos");
@@ -14,18 +20,24 @@ function TodoList(){
         setTodos(json);
     }
 
-
-    useEffect(() => {
-        getTodos();
-    },[]);
+    async function deleteTodo(){
+        console.log("pressed")
+    }
 
     return(
       <div className="todo-list">
-          <PromptBackground/>
-          <ConfirmDeleting/>
+          {
+              promptStatus ? <PromptBackground/> : <></>
+          }
+          {
+              promptStatus ? <ConfirmDeleting/> : <></>
+          }
+
           {
               todos.map((todo) => (
-                <TodoComponent title={todo.title} status={todo.status} key={todo.id} id={todo.id}/>
+                <TodoComponent title={todo.title}
+                               status={todo.status} key={todo.id}
+                               id={todo.id} deleteFunc={deleteTodo}/>
               ))
           }
       </div>
