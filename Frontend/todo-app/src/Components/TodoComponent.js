@@ -13,9 +13,8 @@ function TodoComponent(props){
         }
     }
 
-    function showPrompt(id){
-        console.log(id);
-        props.deleteFunc();
+    function showPrompt(){
+        props.deleteFunc(props.id, props.title);
     }
 
     return(
@@ -24,7 +23,7 @@ function TodoComponent(props){
                     <input type="checkbox" defaultChecked={status} onChange={handleCheck}/>
                     <p className={status ? 'done' : 'undone'}>{props.title}</p>
                 </div>
-                <p className="delete-btn" onClick={() => showPrompt(props.id)}>
+                <p className="delete-btn" onClick={() => showPrompt()}>
                     delete
                 </p>
             </div>
