@@ -15,6 +15,7 @@ function TodoComponent(props){
 
     function showPrompt(id){
         console.log(id);
+        props.deleteFunc();
     }
 
     return(
