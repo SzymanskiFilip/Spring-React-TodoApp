@@ -5,7 +5,9 @@ function ConfirmDeleting(props){
             <h1>{props.title}</h1>
 
             <div className="buttons-row">
-                <button className="btn">Yes</button>
+                <button
+                    className="btn"
+                    onClick={props.delete}>Yes</button>
                 <button
                     className="btn"
                     onClick={props.cancelFunc}>Cancel</button>
