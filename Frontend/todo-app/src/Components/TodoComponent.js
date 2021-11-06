@@ -11,7 +11,7 @@ function TodoComponent(props){
         } else{
             setStatus(true);
         }
-        props.updateChecked(status);
+        props.updateChecked(status, props.id);
     }
 
     function showPrompt(){
