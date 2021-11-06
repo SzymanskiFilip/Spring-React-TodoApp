@@ -22,6 +22,11 @@ function TodoList(){
 
     async function deleteTodo(){
         console.log("pressed")
+        if(promptStatus == false){
+            setPromptStatus(true);
+        } else{
+            setPromptStatus(false);
+        }
     }
 
     return(
