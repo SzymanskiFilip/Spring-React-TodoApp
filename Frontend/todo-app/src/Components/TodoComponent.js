@@ -5,12 +5,13 @@ function TodoComponent(props){
     const [status, setStatus] = useState(props.status);
 
     function handleCheck(){
-        console.log(status)
-        if(status === true){
+
+        if(status == true){
             setStatus(false);
         } else{
             setStatus(true);
         }
+        props.updateChecked(status);
     }
 
     function showPrompt(){
