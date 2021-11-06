@@ -77,3 +77,14 @@ body{
 .confirm-prompt h1{
     text-align: center;
 }
+
+.buttons-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    height: 30px;
+    width: 60px;
+}
