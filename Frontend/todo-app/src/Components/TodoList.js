@@ -44,6 +44,11 @@ function TodoList(){
         setPromptStatus(false);
     }
 
+    async function updateChecked(status){
+        //true = unchecked false = checked
+        console.log(`Updating.... current status = ${status}`);
+    }
+
     return(
       <div className="todo-list">
           {
@@ -57,7 +62,8 @@ function TodoList(){
               todos.map((todo) => (
                 <TodoComponent title={todo.title}
                                status={todo.status} key={todo.id}
-                               id={todo.id} deleteFunc={deleteTodo}/>
+                               id={todo.id} deleteFunc={deleteTodo}
+                               updateChecked={updateChecked}/>
               ))
           }
       </div>
