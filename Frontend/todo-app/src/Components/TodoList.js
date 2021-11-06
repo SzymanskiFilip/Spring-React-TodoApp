@@ -7,6 +7,8 @@ function TodoList(){
 
     const [todos, setTodos] = useState([]);
     const [promptStatus, setPromptStatus] = useState(false);
+    const [deletionId, setDeletionId] = useState();
+    const [deletionTitle, setDeletionTitle] = useState("");
 
     useEffect(() => {
         getTodos();
@@ -20,13 +22,15 @@ function TodoList(){
         setTodos(json);
     }
 
-    async function deleteTodo(){
-        console.log("pressed")
+    async function deleteTodo(id, title){
+        setDeletionId(id);
         if(promptStatus == false){
             setPromptStatus(true);
         } else{
             setPromptStatus(false);
         }
+        setDeletionId(id);
+        setDeletionTitle(title);
     }
 
     function disablePrompt(){
@@ -39,7 +43,7 @@ function TodoList(){
               promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
           }
           {
-              promptStatus ? <ConfirmDeleting/> : <></>
+              promptStatus ? <ConfirmDeleting title={deletionTitle}/> : <></>
           }
 
           {
