@@ -43,7 +43,7 @@ function TodoList(){
               promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
           }
           {
-              promptStatus ? <ConfirmDeleting title={deletionTitle}/> : <></>
+              promptStatus ? <ConfirmDeleting title={deletionTitle} cancelFunc={disablePrompt}/> : <></>
           }
 
           {
