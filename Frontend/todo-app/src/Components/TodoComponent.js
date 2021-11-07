@@ -6,7 +6,7 @@ function TodoComponent(props){
 
     function handleCheck(){
 
-        if(status == true){
+        if(status === true){
             setStatus(false);
         } else{
             setStatus(true);
