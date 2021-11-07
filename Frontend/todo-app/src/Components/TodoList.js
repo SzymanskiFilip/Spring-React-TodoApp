@@ -24,7 +24,7 @@ function TodoList(){
 
     function deleteTodo(id, title){
         setDeletionId(id);
-        if(promptStatus == false){
+        if(promptStatus === false){
             setPromptStatus(true);
         } else{
             setPromptStatus(false);
@@ -37,14 +37,12 @@ function TodoList(){
         disablePrompt();
         console.log(deletionId);
         console.log(deletionTitle);
-        console.log("DELETING id="  + `${deletionId}` + "... PLEASE WAIT...");
     }
 
     function disablePrompt(){
         setPromptStatus(false);
     }
 
-    //TODO: Fix object to update
     async function updateChecked(id, status, title){
         const requestStatus = !status;
         const todo = {
