@@ -85,12 +85,16 @@ function TodoList(){
           }
 
           {
-              todos.map((todo) => (
-                <TodoComponent title={todo.title}
-                               status={todo.status} key={todo.id}
-                               id={todo.id} deleteFunc={deleteTodo}
-                               updateChecked={updateChecked}/>
+              todos.length > 0 && todos.map((todo) => (
+                  <TodoComponent title={todo.title}
+                                 status={todo.status} key={todo.id}
+                                 id={todo.id} deleteFunc={deleteTodo}
+                                 updateChecked={updateChecked}/>
               ))
+          }
+
+          {
+              todos.length == 0 && <h1 style={{color: "white"}}>No todos left!</h1>
           }
       </div>
     );
