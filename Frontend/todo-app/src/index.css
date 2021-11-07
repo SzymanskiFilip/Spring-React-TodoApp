@@ -115,3 +115,11 @@ input{
     outline: none;
     color: white;
 }
+
+button{
+    padding: 5px;
+}
+
+button:hover{
+    cursor:pointer;
+}
