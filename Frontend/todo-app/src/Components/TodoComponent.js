@@ -15,7 +15,7 @@ function TodoComponent(props){
     }
 
     function showPrompt(){
-        props.deleteFunc(props.id, props.title);
+        props.deleteFunc(props.id, props.title, props.status);
     }
 
     return(
