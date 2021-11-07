@@ -88,3 +88,30 @@ body{
     height: 30px;
     width: 60px;
 }
+
+.form-container{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    outline: none;
+    color: white;
+}
