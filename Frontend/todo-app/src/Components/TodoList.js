@@ -52,7 +52,14 @@ function TodoList(){
             "status": requestStatus,
             "title": title
         };
-        console.log(JSON.stringify(todo));
+        const requestOptions = {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(todo)
+        }
+
+        fetch("api/v1/todo", requestOptions)
+            .then(console.log("Updated"));
     }
 
     return(
