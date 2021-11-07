@@ -9,6 +9,7 @@ function TodoList(){
     const [promptStatus, setPromptStatus] = useState(false);
     const [deletionId, setDeletionId] = useState();
     const [deletionTitle, setDeletionTitle] = useState("");
+    const [deletionStatus, setDeletionStatus] = useState();
 
     useEffect(() => {
         getTodos();
@@ -22,7 +23,7 @@ function TodoList(){
         setTodos(json);
     }
 
-    function deleteTodo(id, title){
+    function deleteTodo(id, title, status){
         setDeletionId(id);
         if(promptStatus === false){
             setPromptStatus(true);
@@ -31,12 +32,26 @@ function TodoList(){
         }
         setDeletionId(id);
         setDeletionTitle(title);
+        setDeletionStatus(status);
     }
 
     async function executeDeletion(){
         disablePrompt();
-        console.log(deletionId);
-        console.log(deletionTitle);
+
+        const todo = {
+            "id": deletionId,
+            "title": deletionTitle,
+            "status": deletionStatus
+        };
+        const requestOptions ={
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(todo)
+        };
+
+        fetch("api/v1/todo", requestOptions)
+            .then(() => getTodos());
+
     }
 
     function disablePrompt(){
