@@ -25,4 +25,10 @@ public class TodoController {
         return repository.save(todo);
     }
 
+    @DeleteMapping("/todo")
+    String deleteTodo(@RequestBody Todo todo){
+        repository.delete(todo);
+        return "Deleted Successfully...";
+    }
+
 }
