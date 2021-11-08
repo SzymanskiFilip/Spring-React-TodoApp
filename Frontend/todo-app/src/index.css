@@ -123,3 +123,15 @@ button{
 button:hover{
     cursor:pointer;
 }
+
+.add-todo-btn{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.add-todo-btn:hover{
+    cursor: pointer;
+}
