@@ -1,5 +1,5 @@
 import TodoList from "./Components/TodoList";
-import AddTodo from './LoginPage/AddTodo';
+import AddTodo from './AddTodoPage/AddTodo';
 import {BrowserRouter, Route, Routes, Switch} from "react-router-dom";
 
 function App() {
