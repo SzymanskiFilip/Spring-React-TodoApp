@@ -1,7 +1,6 @@
 import {useState} from 'react';
 
-function LoginPage(){
-
+function AddTodo(){
     const [todo, setTodo] = useState("");
 
     function handleChange(event){
@@ -11,6 +10,7 @@ function LoginPage(){
     function handleSubmit(){
         console.log(todo);
     }
+
 
     return(
         <div className="form-container">
@@ -26,4 +26,4 @@ function LoginPage(){
     );
 }
 
-export default LoginPage;
+export default AddTodo;

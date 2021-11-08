@@ -1,5 +1,5 @@
 import TodoList from "./Components/TodoList";
-import LoginPage from './LoginPage/LoginPage';
+import AddTodo from './LoginPage/AddTodo';
 import {BrowserRouter, Route, Routes, Switch} from "react-router-dom";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<TodoList/>}/>
-            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/add" element={<AddTodo/>}/>
         </Routes>
     </BrowserRouter>
   );
