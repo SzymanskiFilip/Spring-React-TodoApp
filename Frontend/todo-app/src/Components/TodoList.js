@@ -78,7 +78,7 @@ function TodoList(){
 
     return(
         <div>
-            <Link className="add-todo-btn" to="/login">
+            <Link className="add-todo-btn" to="/add">
                 <p className="add-todo-btn">Add a todo here!</p>
             </Link>
             <div className="todo-list">
