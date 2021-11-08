@@ -9,8 +9,18 @@ function AddTodo(){
         setTodo(event.target.value);
     }
 
-    function handleSubmit(){
+    async function handleSubmit(){
         console.log(todo);
+        const newTodo ={
+            title: todo
+        };
+        fetch("api/v1/todo", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newTodo)
+        }).then(()=>{
+            console.log("Todo added!");
+        });
     }
 
     return(
