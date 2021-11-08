@@ -31,4 +31,9 @@ public class TodoController {
         return "Deleted Successfully...";
     }
 
+    @PostMapping("/todo")
+    Todo createTodo(@RequestBody Todo todo){
+        return repository.save(todo);
+    }
+
 }
