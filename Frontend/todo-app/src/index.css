@@ -114,6 +114,8 @@ input{
     margin: 10px;
     outline: none;
     color: white;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 button{
