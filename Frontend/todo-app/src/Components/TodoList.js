@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import {BrowserRouter, Link} from "react-router-dom";
 import TodoComponent from "./TodoComponent";
 import ConfirmDeleting from "./ConfirmDeleting";
 import PromptBackground from "./PromptBackground";
@@ -76,27 +77,32 @@ function TodoList(){
     }
 
     return(
-      <div className="todo-list">
-          {
-              promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
-          }
-          {
-              promptStatus ? <ConfirmDeleting title={deletionTitle} cancelFunc={disablePrompt} delete={executeDeletion}/> : <></>
-          }
+        <div>
+            <Link className="add-todo-btn" to="/login">
+                <p className="add-todo-btn">Add a todo here!</p>
+            </Link>
+            <div className="todo-list">
+                {
+                    promptStatus ? <PromptBackground disableFunc={disablePrompt}/> : <></>
+                }
+                {
+                    promptStatus ? <ConfirmDeleting title={deletionTitle} cancelFunc={disablePrompt} delete={executeDeletion}/> : <></>
+                }
 
-          {
-              todos.length > 0 && todos.map((todo) => (
-                  <TodoComponent title={todo.title}
-                                 status={todo.status} key={todo.id}
-                                 id={todo.id} deleteFunc={deleteTodo}
-                                 updateChecked={updateChecked}/>
-              ))
-          }
+                {
+                    todos.length > 0 && todos.map((todo) => (
+                        <TodoComponent title={todo.title}
+                                       status={todo.status} key={todo.id}
+                                       id={todo.id} deleteFunc={deleteTodo}
+                                       updateChecked={updateChecked}/>
+                    ))
+                }
 
-          {
-              todos.length == 0 && <h1 style={{color: "white"}}>No todos left!</h1>
-          }
-      </div>
+                {
+                    todos.length == 0 && <h1 style={{color: "white"}}>No todos left!</h1>
+                }
+            </div>
+        </div>
     );
 }
 
